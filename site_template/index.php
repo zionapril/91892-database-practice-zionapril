@@ -2,11 +2,24 @@
 
 <html lang="en">
     
-
+<?php
+    
+    session_start(); //to allow variable transfer between pages...
+    include("config.php");
+    
+    // Connect to database... 
+    $dbconnect=mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
+    
+    if(mysqli_connect_errno()) {
+        echo "Connection failed:".mysqli_connect_error();
+        exit; 
+    }
+    
+    ?>
 <head>
     <meta charset="utf-8">
     <meta name="description" content="games, apps, ">
-    <meta name="author" content="your name">
+    <meta name="GTT" content="Game / App Database">
     <meta name="keywords" content="games, apps, ratings">
     
     <title>Game Database</title>
